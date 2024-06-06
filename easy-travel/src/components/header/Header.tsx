@@ -1,7 +1,18 @@
+import Container from '../shared/Container';
+import LoginSignup from './LoginSignup';
+import Logo from './Logo';
+import Menu from './Menu';
+
 const Header = () => {
   return (
     <header>
-      <h1>header</h1>
+      <Container>
+        <div className='flex items-center justify-between'>
+          <Logo />
+          <Menu />
+          <LoginSignup />
+        </div>
+      </Container>
     </header>
   );
 };
