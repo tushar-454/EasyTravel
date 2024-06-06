@@ -8,10 +8,17 @@ const menuArr = [
   { name: 'Contact', path: '/contact' },
 ];
 
-const Menu = () => {
+interface MenuProps {
+  col: boolean;
+  hfull: boolean;
+}
+
+const Menu: React.FC<MenuProps> = ({ col, hfull }) => {
   return (
     <div>
-      <ul className='flex gap-10'>
+      <ul
+        className={`flex gap-10 ${col ? 'flex-col' : 'flex-row'} ${hfull ? '!h-full' : 'h-auto'}`}
+      >
         {menuArr.map((menu, index) => (
           <li key={index}>
             <Link href={menu.path} className='text-lg font-medium'>

@@ -3,7 +3,7 @@ import Button from '../shared/ui/Button';
 
 const LoginSignup = () => {
   return (
-    <div className='flex items-center justify-center gap-5'>
+    <div className='mt-10 flex items-center justify-center gap-5 lg:mt-0'>
       <Link href='/login'>
         <Button isFill={false}>Login</Button>
       </Link>
