@@ -34,7 +34,7 @@ const Services = () => {
     <section>
       <Container>
         <div className='mt-24'>
-          <Title>Our Services For You</Title>
+          <Title type='center'>Our Services For You</Title>
           <div className='my-20 flex flex-wrap gap-10'>
             {servicesArr.map((service) => (
               <Service key={Math.random()} service={service} />
