@@ -1,10 +1,10 @@
 import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
 import type { Metadata } from 'next';
-import { Noto_Sans } from 'next/font/google';
+import { Lexend } from 'next/font/google';
 import './globals.css';
 
-const notoSans = Noto_Sans({ subsets: ['latin'] });
+const lexend = Lexend({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: '',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={notoSans.className}>
+      <body className={lexend.className}>
         <Header />
         {children}
         <Footer />

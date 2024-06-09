@@ -7,7 +7,9 @@ const Title: React.FC<TitleProps> = ({ type, children }) => {
   return (
     <>
       {type === 'center' && (
-        <div className='text-center text-4xl font-bold'>{children}</div>
+        <div className='text-center text-4xl font-bold leading-[3rem]'>
+          {children}
+        </div>
       )}
       {type === 'left' && (
         <div className='text-left text-4xl font-bold leading-[3rem]'>
