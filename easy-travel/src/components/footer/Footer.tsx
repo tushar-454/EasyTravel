@@ -1,3 +1,5 @@
+'use client';
+
 export type FooterType = {
   type: string;
   lists: {
@@ -6,6 +8,7 @@ export type FooterType = {
   }[];
 };
 
+import { usePathname } from 'next/navigation';
 import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import Logo from '../header/Logo';
 import Container from '../shared/Container';
@@ -86,39 +89,45 @@ const footerArr: FooterType[] = [
 ];
 
 const Footer = () => {
+  const pathname = usePathname();
+
   return (
-    <footer className='bg-[#faf8f6]'>
-      <Container>
-        <div className='mt-20 grid grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-4'>
-          <div className='flex flex-col items-start justify-center'>
-            <Logo />
-            <ul className='flex items-center gap-6'>
-              <li>
-                <a href='#'>
-                  <FaInstagram className='text-2xl' />
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  <FaLinkedin className='text-2xl' />
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  <FaTwitter className='text-2xl' />
-                </a>
-              </li>
-            </ul>
-          </div>
-          {footerArr.map((footerItem) => (
-            <FooterItem key={Math.random()} footerItem={footerItem} />
-          ))}
-        </div>
-      </Container>
-      <p className='border-t py-5 text-center'>
-        All Rights reserved &copy; 2024 | Easy Travel
-      </p>
-    </footer>
+    <>
+      {pathname !== '/login' && pathname !== '/signup' && (
+        <footer className='bg-[#faf8f6]'>
+          <Container>
+            <div className='mt-20 grid grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-4'>
+              <div className='flex flex-col items-start justify-center'>
+                <Logo />
+                <ul className='flex items-center gap-6'>
+                  <li>
+                    <a href='#'>
+                      <FaInstagram className='text-2xl' />
+                    </a>
+                  </li>
+                  <li>
+                    <a href='#'>
+                      <FaLinkedin className='text-2xl' />
+                    </a>
+                  </li>
+                  <li>
+                    <a href='#'>
+                      <FaTwitter className='text-2xl' />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              {footerArr.map((footerItem) => (
+                <FooterItem key={Math.random()} footerItem={footerItem} />
+              ))}
+            </div>
+          </Container>
+          <p className='border-t py-5 text-center'>
+            All Rights reserved &copy; 2024 | Easy Travel
+          </p>
+        </footer>
+      )}
+    </>
   );
 };
 
