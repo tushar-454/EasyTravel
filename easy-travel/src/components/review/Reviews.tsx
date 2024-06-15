@@ -68,7 +68,10 @@ const Reviews = () => {
           </Title>
           <div className='my-10 flex flex-wrap gap-10'>
             {reviewArr.map((review) => (
-              <ReviewItem key={Math.random()} review={review} />
+              <ReviewItem
+                key={Math.random().toString(36).substr(2, 9)}
+                review={review}
+              />
             ))}
           </div>
         </div>

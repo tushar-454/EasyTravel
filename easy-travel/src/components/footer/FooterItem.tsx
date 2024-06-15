@@ -10,7 +10,7 @@ const FooterItem: React.FC<FooterItemProps> = ({ footerItem }) => {
       <p className='mb-6 text-lg font-bold'>{footerItem.type}</p>
       <ul className='space-y-3'>
         {footerItem.lists.map((list) => (
-          <li>
+          <li key={Math.random().toString(36).substr(2, 9)}>
             <a href={list.link} className='text-gray-600'>
               {list.name}
             </a>

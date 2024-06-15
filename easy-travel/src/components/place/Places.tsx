@@ -48,7 +48,10 @@ const Places = () => {
           <Title type='center'>Places to Visit</Title>
           <div className='my-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
             {placesArr.map((place) => (
-              <Place key={Math.random()} place={place} />
+              <Place
+                key={Math.random().toString(36).substr(2, 9)}
+                place={place}
+              />
             ))}
           </div>
         </div>

@@ -9,7 +9,7 @@ const Star: React.FC<StarProps> = ({ star }) => {
       <p className='flex'>
         {[...Array(5)].map(() => (
           <MdOutlineStarPurple500
-            key={Math.random()}
+            key={Math.random().toString(36).substr(2, 9)}
             style={{ color: '#12121236' }}
             className='text-xl'
           />
@@ -18,7 +18,7 @@ const Star: React.FC<StarProps> = ({ star }) => {
       <p className='absolute left-0 top-0 flex'>
         {[...Array(Math.floor(star))].map(() => (
           <MdOutlineStarPurple500
-            key={Math.random()}
+            key={Math.random().toString(36).substr(2, 9)}
             style={{ color: '#fbbf24' }}
             className='text-xl'
           />

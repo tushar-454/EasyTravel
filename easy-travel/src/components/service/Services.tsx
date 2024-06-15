@@ -37,7 +37,10 @@ const Services = () => {
           <Title type='center'>Our Services For You</Title>
           <div className='my-20 flex flex-wrap gap-10'>
             {servicesArr.map((service) => (
-              <Service key={Math.random()} service={service} />
+              <Service
+                key={Math.random().toString(36).substr(2, 9)}
+                service={service}
+              />
             ))}
           </div>
         </div>

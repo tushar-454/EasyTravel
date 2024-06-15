@@ -118,7 +118,10 @@ const Footer = () => {
                 </ul>
               </div>
               {footerArr.map((footerItem) => (
-                <FooterItem key={Math.random()} footerItem={footerItem} />
+                <FooterItem
+                  key={Math.random().toString(36).substr(2, 9)}
+                  footerItem={footerItem}
+                />
               ))}
             </div>
           </Container>
