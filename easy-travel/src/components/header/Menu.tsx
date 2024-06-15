@@ -11,9 +11,10 @@ const menuArr = [
 interface MenuProps {
   col: boolean;
   hfull: boolean;
+  setIsMenuOpen?: Function;
 }
 
-const Menu: React.FC<MenuProps> = ({ col, hfull }) => {
+const Menu: React.FC<MenuProps> = ({ col, hfull, setIsMenuOpen }) => {
   return (
     <div>
       <ul
@@ -21,7 +22,11 @@ const Menu: React.FC<MenuProps> = ({ col, hfull }) => {
       >
         {menuArr.map((menu, index) => (
           <li key={index}>
-            <Link href={menu.path} className='text-lg font-medium'>
+            <Link
+              href={menu.path}
+              onClick={() => setIsMenuOpen && setIsMenuOpen(false)}
+              className='text-lg font-medium'
+            >
               {menu.name}
             </Link>
           </li>

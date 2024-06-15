@@ -10,7 +10,7 @@ const Signup = () => {
         <div className='grid h-screen place-items-center'>
           <div className='rounded-md border p-10 shadow-lg'>
             <h1 className='mb-10 text-4xl font-bold'>Create an Account</h1>
-            <form className='w-80 space-y-4'>
+            <form className='w-full space-y-4 sm:w-80'>
               <Input
                 label='Full Name'
                 id='fullName'

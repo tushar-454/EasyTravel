@@ -38,8 +38,8 @@ const Header = () => {
           <div
             className={`fixed top-0 block h-full border-r-2 bg-gray-100 p-6 transition-all lg:hidden ${isMenuOpen ? 'left-0' : '-left-80'}`}
           >
-            <Menu col={true} hfull={true} />
-            <LoginSignup />
+            <Menu col={true} hfull={true} setIsMenuOpen={setIsMenuOpen} />
+            <LoginSignup setIsMenuOpen={setIsMenuOpen} />
           </div>
         </div>
       </Container>
